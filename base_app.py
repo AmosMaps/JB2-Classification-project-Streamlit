@@ -70,7 +70,7 @@ def main():
 		st.info("Prediction with ML Models")
 		# Creating a text box for user input
 		news_text = st.text_area("Enter Text","Type Here")
-       
+        
         model_name = ["Logistic Regression Classifier", "Support Vector Classifier", "Random Forest Classifier"]
 		#selection = st.sidebar.selectbox("Choose Option", options)
 		model_choice = st.selectbox(
