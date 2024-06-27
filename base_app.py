@@ -36,7 +36,7 @@ import pickle
 
 # Load your vectorizer from the pkl file
 with open("vectorizer.pkl", "rb") as file:
-    test_cv = joblib.load(vect) # loading your vectorizer from the pkl file
+    test_cv = joblib.load(file) # loading your vectorizer from the pkl file
 
 # Load your raw data from CSV file
 raw = pd.read_csv("test.csv")
