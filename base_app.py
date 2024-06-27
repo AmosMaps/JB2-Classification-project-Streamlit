@@ -30,11 +30,11 @@ import pandas as pd
 import pickle
 
 # Load your vectorizer from the pkl file
-with open("vect.pkl", "rb") as file:
+with open("vectorizer.pkl", "rb") as file:
     test_cv = pickle.load(file)
 
 # Load your raw data from CSV file
-raw = pd.read_csv("test.csv")
+raw = pd.read_csv("train.csv")
 
 # Display the first few rows of the dataframe to confirm it is loaded correctly
 print(raw.head())
