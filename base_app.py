@@ -27,13 +27,17 @@ import joblib,os
 
 # Data dependencies
 import pandas as pd
+import pickle
 
-# Vectorizer
-#news_vectorizer = open("streamlit/tfidfvect.pkl","rb")
-#test_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl file
+# Load your vectorizer from the pkl file
+with open("vect.pkl", "rb") as file:
+    test_cv = pickle.load(file)
 
-# Load your raw data
-#raw = pd.read_csv("streamlit/train.csv")
+# Load your raw data from CSV file
+raw = pd.read_csv("test.csv")
+
+# Display the first few rows of the dataframe to confirm it is loaded correctly
+print(raw.head())
 
 # The main function where we will build the actual app
 def main():
