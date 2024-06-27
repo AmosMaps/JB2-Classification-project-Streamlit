@@ -27,6 +27,7 @@ import joblib,os
 
 # Data dependencies
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 
 # Load your vectorizer from the pkl file
