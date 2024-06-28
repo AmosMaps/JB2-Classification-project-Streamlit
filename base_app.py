@@ -55,7 +55,7 @@ def main():
 
     # Creating sidebar with selection box -
     # you can create multiple pages this way
-    options = ["Prediction", "Information"]
+    options = ["Prediction", "Information", "About us"]
     selection = st.sidebar.selectbox("Choose Option", options)
 
     # Building out the "Information" page
@@ -71,7 +71,6 @@ def main():
         news_text = st.text_area("Enter Text", "Type Here")
         
         model_name = ["Logistic Regression Classifier", "Support Vector Classifier", "Random Forest Classifier"]
-        # selection = st.sidebar.selectbox("Choose Option", options)
         model_choice = st.selectbox("Select a Classifier Model", model_name)
 
         if st.button("Classify"):
@@ -93,14 +92,35 @@ def main():
             # When model has successfully run, will print prediction
             # You can use a dictionary or similar structure to make this output
             # more human interpretable.
-            if prediction == 1:
-                st.success("Text Categorized as: {}".format(prediction))
-            elif prediction == 0:
-                st.success("Text Categorized as: {}".format(prediction))
-            elif prediction == 3:
-                st.success("Text Categorized as: {}".format(prediction))
-            elif prediction == 4:
-                st.success("Text Categorized as: {}".format(prediction))
+            st.success("Text Categorized as: {}".format(prediction[0]))
+
+    # Building out the "About us" page
+    if selection == "About us":
+        left_column, right_column = st.columns(2)
+        with left_column:
+            st.header("Meet our team")
+            st.write("##")
+            st.write(
+                """
+                Amos Maponya - Software Engineer
+
+                Siphosethu Rululu - Data Scientist
+
+                Lebogang Malata - Project Manager
+
+                Judith Kabongo - GitHub Manager
+
+                Josephine Ndukwani - Data Scientist
+
+                Tselane Moeti - Data Scientist
+                """)
+
+        with right_column:
+            st.header("Problem statement")
+            st.write("##")
+            st.write(
+                """The primary aim of this project is to develop and deploy an automated news article classification system using machine learning techniques. This system will be designed to accurately classify articles into predefined categories, thereby improving content organization, operational efficiency, and reader satisfaction for the news outlet.
+                """)
 
 # Required to let Streamlit instantiate our web app.
 if __name__ == '__main__':
