@@ -60,9 +60,9 @@ def main():
 
     # Building out the "Information" page
     if selection == "Information":
-        st.info("General Information")
+        st.info("In today's digital world, people read a lot more news than ever before, creating a huge amount of information for readers to sort through. To help readers find the news they care about, we aim to build a model that organizes news articles into predefined categories based on their subject matter. This will help in systematically managing and retrieving content, making it more accessible and relevant to users.")
         # You can read a markdown file from supporting resources folder
-        st.markdown("Some information here")
+        st.markdown("Using new technologies in machine learning and natural language processing (NLP), this project will create robust models that can automatically sort news articles into the right categories. This will lead to improved content categorization, operational efficiency, and enhanced user experience, which are crucial for a news outlet. These models will later be turned into an app for news outlets and readers to use to their advantage.")
 
     # Building out the prediction page
     if selection == "Prediction":
