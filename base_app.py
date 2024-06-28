@@ -128,7 +128,7 @@ def main():
     ]
 
     page_titles = [page["title"] for page in pages]
-    selection = st.sidebar.selectbox("Choose Option", page_titles)
+    selection = st.sidebar.radio("Choose Option", page_titles)
 
     for page in pages:
         if page["title"] == selection:
