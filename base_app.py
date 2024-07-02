@@ -11,6 +11,9 @@ import pickle
 # Load the vectorizer from the pkl file
 with open("vectorizer.pkl", "rb") as file:
     test_cv = pickle.load(file)
+    
+# Load your raw data
+raw = pd.read_csv("train.csv")
 
 # Function to display information page
 def show_information():
@@ -45,32 +48,63 @@ def show_prediction():
 
 # Function to display "About Us" page
 def show_about_us():
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.header("Meet our team")
+    st.markdown(
+        """
+        <style>
+        .header {
+            margin-bottom: 0.5rem;
+        }
+        .subheader {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
+    st.markdown('<h2 class="header">What we do</h2>', unsafe_allow_html=True)
+    st.write(
+        """
+        As Data Science consultants specializing in app development, we craft bespoke solutions tailored precisely to your preferences and needs. From translating your ideas into robust software to enhancing functionality with cutting-edge machine learning capabilities, we strive to make your vision a reality. Our goal is to not only meet but exceed your expectations, delivering intuitive applications that simplify and enrich your daily operations. Let us transform your aspirations into powerful tools that elevate efficiency and innovation in your endeavors.
+        """
+    )
+    
+    st.markdown('<h2 class="subheader">Meet our team</h2>', unsafe_allow_html=True)
+    st.write(
+        """
+        Amos Maponya - Software Engineer
+
+        Siphosethu Rululu - Data Scientist
+
+        Lebogang Malata - Project Manager
+
+        Judith Kabongo - GitHub Manager
+
+        Josephine Ndukwani - Data Scientist
+
+        Tselane Moeti - Data Scientist
+        """
+    )
+    
+    with st.container():
+        st.write("---")
+        st.header(":mailbox_with_mail: Get In Touch With Us!")
         st.write("##")
-        st.write(
-            """
-            Amos Maponya - Software Engineer
 
-            Siphosethu Rululu - Data Scientist
-
-            Lebogang Malata - Project Manager
-
-            Judith Kabongo - GitHub Manager
-
-            Josephine Ndukwani - Data Scientist
-
-            Tselane Moeti - Data Scientist
-            """)
-
-    with right_column:
-        st.header("Problem statement")
+        contact_form = """
+        <form action="https://formsubmit.co/amosphashe@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        """
+        st.markdown(contact_form, unsafe_allow_html=True)
+    
+    with st.container():
         st.write("##")
-        st.write(
-            """The primary aim of this project is to develop and deploy an automated news article classification system using machine learning techniques. This system will be designed to accurately classify articles into predefined categories, thereby improving content organization, operational efficiency, and reader satisfaction for the news outlet.
-            """)
-
+        st.header(":round_pushpin: Find us here")
+        st.write("Suite 500, Pinnacle Building, 123 Main Street, Cape Town, 8000")
 
 # Main function where we will build the actual app
 def main():
