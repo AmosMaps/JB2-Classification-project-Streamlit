@@ -19,7 +19,7 @@ def show_information():
     
 # Function to display prediction page
 def show_prediction():
-    st.info("Prediction with ML Models")
+    st.info("Prediction with Machine Learning Models")
     news_text = st.text_area("Enter Text", "Type Here")
     
     model_name = ["Logistic Regression Classifier", "Support Vector Classifier", "Random Forest Classifier"]
